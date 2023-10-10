@@ -10,8 +10,8 @@ java -cp bin;jars_folder\cloudsim-3.0.3.jar;jars_folder\cloudsim-examples-3.0.3.
 - complete Assign Task To Spesific Vm ✅
 - add lang long to the task     ✅         
 - add lang long to the Datacenters    ✅    
-- send data to hassan      
-- add api to app
+- send data to hassan   ✅    
+- add api to app        ✅
 
 
 
