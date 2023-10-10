@@ -1,0 +1,92 @@
+# Sample data
+data = {
+    "request": {
+        "Cloud_data": {
+            "DATA_CENTERS": {
+                "1": {
+                    "longitude": 45.258,
+                    "latitude": 45.258,
+                    "hostMips": 1000,
+                    "hostRam": 2048,
+                    "hostStorage": 1000000,
+                    "hostBw": 10000,
+                    "VMS": {
+                        "101": {
+                            "vmMips": 500,
+                            "vmstorage": 500000,
+                            "vmRam": 1024,
+                            "vmBw": 5000
+                        },
+                        "102": {
+                            "vmMips": 550,
+                            "vmstorage": 550000,
+                            "vmRam": 1100,
+                            "vmBw": 5500
+                        },
+                        # ... (add other VMs as needed)
+                    }
+                },
+                "2": {
+                    "longitude": 46.300,
+                    "latitude": 46.300,
+                    "hostMips": 1100,
+                    "hostRam": 2148,
+                    "hostStorage": 1100000,
+                    "hostBw": 11000,
+                    "VMS": {
+                        # ... (add VM data for this DC)
+                    }
+                },
+                "3": {
+                    "longitude": 47.400,
+                    "latitude": 47.400,
+                    "hostMips": 1200,
+                    "hostRam": 2248,
+                    "hostStorage": 1200000,
+                    "hostBw": 12000,
+                    "VMS": {
+                        # ... (add VM data for this DC)
+                    }
+                }
+            },
+            "TASKS": {
+                "1": {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060,
+               
+                },
+                "2": {
+                    "latitude": 41.9000,
+                    "longitude": -75.0000,
+                 
+                },
+                "3": {
+                    "latitude": 42.5000,
+                    "longitude": -76.0000,
+                }
+            }
+        }
+    }
+}
+
+
+# Retrieving all tasks
+tasks = data['request']['Cloud_data']['TASKS']
+for task_id, task_info in tasks.items():
+    print(f"Task ID: {task_id}")
+    print(f"Task Latitude: {task_info['latitude']}")
+    # ... (print other task properties if needed)
+    print("------------------")
+
+# Retrieving all data centers and their VMs
+data_centers = data['request']['Cloud_data']['DATA_CENTERS']
+for dc_id, dc_info in data_centers.items():
+    print(f"Data Center ID: {dc_id}")
+    print(f"DC Longitude: {dc_info['longitude']}")
+    # ... (print other DC properties if needed)
+
+    # Loop through VMs in the current data center
+    for vm_id, vm_info in dc_info['VMS'].items():
+        print(f"\tVM ID: {vm_id}")
+        # ... (print VM properties if needed)
+    print("------------------")

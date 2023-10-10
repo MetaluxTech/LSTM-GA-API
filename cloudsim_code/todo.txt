@@ -1,0 +1,27 @@
+code to run from terminal
+`
+java -cp bin;jars_folder\cloudsim-3.0.3.jar;jars_folder\cloudsim-examples-3.0.3.jar;jars_folder\commons-math3-3.6.1.jar myjava1.j1class
+
+`
+
+
+- fix not run from gui and terminal ✅
+- complete assign Vm to Spesific DC ✅
+- complete Assign Task To Spesific Vm ✅
+- add lang long to the task     ✅         
+- add lang long to the Datacenters    ✅    
+- send data to hassan      
+- add api to app
+
+
+
+some locations
+double[][] points = {
+        {40.730610, -73.935242}, // New York
+        {34.052235, -118.243683}, // Los Angeles
+        {51.509865, -0.118092},  // London
+        {48.856613, 2.352222},   // Paris
+        {35.6895, 139.6917},     // Tokyo
+        {-33.8688, 151.2093}     // Sydney
+    };
+
