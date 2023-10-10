@@ -58,26 +58,24 @@ def genetic_algorithm(datacenters, generations, budget):
 
 @app.route('/optimize', methods=['POST'])
 def optimize_datacenter():
-    data = request.get_json()
-    budget_value = data.get('budget_value')
-    print("budget::",budget_value)
-    # try:
-    request_data = request.get_json()
-    input_budget = request_data['budget_value']
-    input_budget=int(input_budget)
-    # input_budget = 2000
+    
+    try:
+        request_data = request.get_json()
+        input_budget = request_data['budget_value']
+        input_budget=int(input_budget)
+        # input_budget = 2000
 
-    # Run the Genetic Algorithm with the specified budget constraint
-    best_datacenter = genetic_algorithm(datacenters, generations=100, budget=input_budget)
+        # Run the Genetic Algorithm with the specified budget constraint
+        best_datacenter = genetic_algorithm(datacenters, generations=100, budget=input_budget)
 
-    if best_datacenter:
-        return jsonify({'message': 'Success', 'best_datacenter': best_datacenter}), 200
-    else:
-        return jsonify({'message': 'No suitable datacenter found within the budget'}), 404
+        if best_datacenter:
+            return jsonify({'message': 'Success', 'best_datacenter': best_datacenter}), 200
+        else:
+            return jsonify({'message': 'No suitable datacenter found within the budget'}), 404
 
-    # except Exception as e:
-    #     print('error::' ,jsonify({'error': str(e)}))
-    #     return jsonify({'error': str(e)}), 444
+    except Exception as e:
+            print('error::' ,jsonify({'error': str(e)}))
+            return jsonify({'error': str(e)}), 444
 
 if __name__ == '__main__':
     # Example list of datacenters with realistic specifications
